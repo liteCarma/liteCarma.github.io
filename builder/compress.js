@@ -3,7 +3,8 @@ const $ = require('gulp-load-plugins')()
 
 module.exports = function jsmin (options) {
   return  gulp.src(options.src, {lastRun: gulp.lastRun(options.name)})
-          .pipe($.if(!options.isDevelopment,$.minify(
+          .pipe($.concat('project.js'))
+          .pipe($.if(!options.isDevelopment, $.minify(
             {
               ext:{
                 //src:'-debug.js',

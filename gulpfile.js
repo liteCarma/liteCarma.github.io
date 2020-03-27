@@ -7,7 +7,7 @@ const optionsGulp = {
 
 const pathMap = {
   bundles: 'bundles',
-  styles: ['src/sass/**/*.{sass,scss}', 'src/css/**/*.css'],
+  styles: 'src/style/**/*.*',
   lint: 'src/js/**/*.js',
   assets: 'src/assets/**/*',
 }
@@ -50,10 +50,11 @@ const assets = lazyRequireTask('./builder/assets', {
   src: pathMap.assets
 })
 
-const build = series(clean, parallel(styles, lint, assets))
+const build = series(clean, parallel(styles, lint, jsmin, assets))
 
 const watch = function (cb) {
   gulp.watch(pathMap.styles, styles)
+  gulp.watch(pathMap.lint, jsmin)
   gulp.watch(pathMap.assets, assets)
   cb()
 }
