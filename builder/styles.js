@@ -1,8 +1,6 @@
 const gulp = require('gulp')
 const $ = require('gulp-load-plugins')()
 const combiner = require('stream-combiner2').obj
-const through2 = require('through2').obj;
-const { Transform  } = require('stream');
 
 module.exports = function styles (options) {
   return combiner(

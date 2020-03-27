@@ -1,0 +1,33 @@
+.button {
+    width: 150px;
+    height: 30px;
+    background-color: $main-color;
+    border-radius: 5.0px;
+    border: none;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    color: #ffffff;
+    &:hover {
+        background: linear-gradient(to right,#ea1515,#dd9781);
+
+    }
+    &_main {
+        margin-top: 67px;
+        width: 300px;
+        height: 50px;
+        font-size: 16px;
+    }
+    &_submit {
+        height: 55px;
+        width: 100%;
+        font-size: 16px;
+        
+     }
+     &_mini {
+        width: 131px;
+        height: 40px;
+        font-size: 14px;
+     }
+}
